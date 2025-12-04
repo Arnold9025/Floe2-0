@@ -333,6 +333,14 @@ Hi {{name}},
 def health_check():
     return "Slack Control Center is Running", 200
 
+@app.route('/test-slack', methods=['GET', 'POST'])
+def test_slack():
+    success = notifier.send_message("Test notification from Slack Control Center!")
+    if success:
+        return "Notification sent!", 200
+    else:
+        return "Failed to send notification. Check logs.", 500
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 3000))
     app.run(host='0.0.0.0', port=port)
