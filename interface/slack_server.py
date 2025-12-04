@@ -360,6 +360,23 @@ def trigger_import():
     except Exception as e:
         return f"Error running import: {e}", 500
 
+@app.route('/trigger-process', methods=['GET', 'POST'])
+def trigger_process():
+    try:
+        from execution.process_sequence import main as process_main
+        
+        import io
+        from contextlib import redirect_stdout
+        
+        f = io.StringIO()
+        with redirect_stdout(f):
+            process_main()
+        
+        output = f.getvalue()
+        return f"<pre>{output}</pre>", 200
+    except Exception as e:
+        return f"Error running process: {e}", 500
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 3000))
     app.run(host='0.0.0.0', port=port)

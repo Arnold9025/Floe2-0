@@ -5,8 +5,8 @@ import json
 # Add parent dir to path to import notifications
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from hubspot_utils import get_hubspot_client, get_all_contacts
-from db import add_lead, get_lead_by_email, update_lead_hubspot_id, get_db_connection, execute_query
+from execution.hubspot_utils import get_hubspot_client, get_all_contacts
+from execution.db import add_lead, get_lead_by_email, update_lead_hubspot_id, get_db_connection, execute_query
 from execution.name_utils import normalize_name
 from dotenv import load_dotenv
 
