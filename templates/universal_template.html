@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ subject }}</title>
+</head>
+
+<body
+    style="margin: 0; padding: 0; background-color: #f9fafb; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; color: #111827; line-height: 1.6;">
+
+    <!-- Main Wrapper -->
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"
+        style="background-color: #f9fafb; width: 100%; margin: 0; padding: 40px 0;">
+        <tr>
+            <td align="center">
+
+                <!-- Content Container -->
+                <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0"
+                    style="max-width: 600px; width: 100%; background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);">
+                    <tr>
+                        <td style="padding: 40px;">
+
+                            <!-- Minimal Header -->
+                            <div style="margin-bottom: 32px; border-bottom: 1px solid #f3f4f6; padding-bottom: 16px;">
+                                <span
+                                    style="font-size: 14px; font-weight: 600; color: #374151; letter-spacing: -0.01em;">
+                                    QUARTIER DIGITAL
+                                </span>
+                            </div>
+
+                            <!-- Greeting -->
+                            <p style="margin: 0 0 20px 0; font-size: 16px; color: #111827;">
+                                Hi {{ name }},
+                            </p>
+
+                            <!-- Hook (Blockquote Style) -->
+                            <!-- Professional, subtle emphasis without being a "box" -->
+                            <div">
+                                "{{ personalized_hook }}"
+                                </div>
+
+                                <!-- Body Text -->
+                                <p style="margin: 0 0 24px 0; font-size: 16px; color: #374151;">
+                                    {{ value_proposition }}
+                                </p>
+
+                                <!-- CTA Button -->
+                                <!-- Solid, dark, professional -->
+                                <div style="margin: 32px 0;">
+                                    <a href="https://cal.com/arnold-adadjisso-7qomam/meeting-dev"
+                                        style="display: inline-block; background-color: #111827; color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 500; font-size: 14px;">
+                                        {{ cta_text }}
+                                    </a>
+                                </div>
+
+                                <!-- Sign-off -->
+                                <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #f3f4f6;">
+                                    <p style="margin: 0; font-weight: 600; color: #111827;">{{ my_name }}</p>
+                                    <p style="margin: 2px 0 0 0; font-size: 14px; color: #6b7280;">{{ my_title }}</p>
+                                    <p style="margin: 2px 0 0 0; font-size: 14px;">
+                                        <a href="{{ my_website }}"
+                                            style="color: #6b7280; text-decoration: none;">quartier-digital.com</a>
+                                    </p>
+                                </div>
+
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Minimal Footer -->
+                <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0"
+                    style="max-width: 600px; width: 100%; margin-top: 24px;">
+                    <tr>
+                        <td align="center" style="font-size: 12px; color: #9ca3af;">
+                            <p style="margin: 0;">
+                                <a href="{{ unsubscribe_link }}"
+                                    style="color: #9ca3af; text-decoration: underline;">Unsubscribe</a>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
