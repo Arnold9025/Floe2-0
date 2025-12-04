@@ -341,6 +341,25 @@ def test_slack():
     else:
         return "Failed to send notification. Check logs.", 500
 
+@app.route('/trigger-import', methods=['GET', 'POST'])
+def trigger_import():
+    try:
+        # Run import_leads.py logic here or call it
+        from execution.import_leads import main as import_main
+        
+        # Capture stdout to show user
+        import io
+        from contextlib import redirect_stdout
+        
+        f = io.StringIO()
+        with redirect_stdout(f):
+            import_main()
+        
+        output = f.getvalue()
+        return f"<pre>{output}</pre>", 200
+    except Exception as e:
+        return f"Error running import: {e}", 500
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 3000))
     app.run(host='0.0.0.0', port=port)
